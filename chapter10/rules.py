@@ -42,7 +42,7 @@ class ListItemRule(Rule):
 
     type = 'listen'
     def condition(self, block):
-        return block[0:2] == '-'
+        return block[0] == '-'
     def action(self, block, handler):
         handler.start(self.type)
         handler.feed(block[1:].strip())
