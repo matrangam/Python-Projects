@@ -42,14 +42,14 @@ class ListItemRule(Rule):
 
     type = 'listen'
     def condition(self, block):
-        return block[0] == '-'
+        return block[0:2] == '-'
     def action(self, block, handler):
         handler.start(self.type)
         handler.feed(block[1:].strip())
         handler.end(self.type)
         return True
 
-class ListRule(listItemRule):
+class ListRule(ListItemRule):
     """
     A list begins within a block that is not a list item and
     a subsequent list item.  It ends after the last consecutive
@@ -69,7 +69,7 @@ class ListRule(listItemRule):
             self.inside = False
         return False
 
-class paragraphRule(Rule):
+class ParagraphRule(Rule):
     """
     A paragraph is a block that does not fall in to any other rules
     """

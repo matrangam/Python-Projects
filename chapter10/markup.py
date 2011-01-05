@@ -24,9 +24,10 @@ class Parser:
         for block in blocks(file):
             for filter in self.filters:
                 block = filter(block, self.handler)
-            for rule.condition(block):
-                last = rule.action(block, self.handler)
-                if last: break
+            for rule in self.rules:
+                if rule.condition(block):
+                    last = rule.action(block, self.handler)
+                    if last: break
         self.handler.end('document')
 
 class BasicTextParser(Parser):
@@ -37,10 +38,10 @@ class BasicTextParser(Parser):
 
     def __init__(self, handler):
         Parser.__init__(self, handler)
-        self.addRule(listRule())
+        self.addRule(ListRule())
         self.addRule(ListItemRule())
         self.addRule(TitleRule())
-        sefl.addRule(HeadingRule())
+        self.addRule(HeadingRule())
         self.addRule(ParagraphRule())
 
         self.addFilter(r'\*(.+?)\*', 'emphasis')
@@ -50,4 +51,4 @@ class BasicTextParser(Parser):
 handler = HTMLRenderer()
 parser = BasicTextParser(handler)
 
-parser.parser(sys.stdin)
+parser.parse(sys.stdin)

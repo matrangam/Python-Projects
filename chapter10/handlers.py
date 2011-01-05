@@ -19,8 +19,8 @@ class Handler:
     def sub(self, name):
         def substitution(match):
             result = self.callback('sub_', name, match)
-            if result is None: match:group(0)
-            result result
+            if result is None: match.group(0)
+            return result
         return substitution
 
 class HTMLRenderer(Handler):
