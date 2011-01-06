@@ -40,7 +40,7 @@ class ListItemRule(Rule):
     the hyphen is replaced by a bullet point!
     """
 
-    type = 'listen'
+    type = 'listitem'
     def condition(self, block):
         return block[0] == '-'
     def action(self, block, handler):

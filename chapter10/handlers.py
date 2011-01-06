@@ -1,6 +1,6 @@
 class Handler:
     """
-    An object that handlees method calls from Parser.
+    An object that handlers method calls from Parser.
 
     the Parser will call the start() and end() methods
     at the beginning of each block, with the proper block
@@ -32,7 +32,7 @@ class HTMLRenderer(Handler):
     basic HTML markup.
     """
     def start_document(self):
-        print '<html><head><title>...</title></head<>body>'
+        print '<html><head><title>...</title></head><body>'
     def end_document(self):
         print '</body></html>'
     def start_paragraph(self):
