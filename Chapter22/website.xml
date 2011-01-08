@@ -1,0 +1,28 @@
+<website>
+  <page name="index" title="Home Page">
+    <h1>Welcome to My Home Page</h1>
+
+    <p>O hai there! My name is Mr. Gumby, and this is my banging homepage. Here are some of my interests:</p>
+    
+    <ul>
+	<li><a href="interests/shouting.html">SHOUTING!</a></li>
+	<li><a href="interests/sleeping.html">Sleeping</a></li>
+	<li><a href="interests/eating.html">Eating</a></li>
+    </ul>
+  </page>
+  <directory name="interests">
+    <page name="shouting" title="SHOUTING!">
+	<h1>Mr. Gumby's SHOUTING Page</h1>
+	<p> SHOUT SHOUT SHOUT!</p>
+    </page>
+    <page name="Sleeping" title="ZZZzzzzz">
+	<h1>Mr. Gumby's sleeping page</h1>
+	<p>ZZZZZZzzzzzzz</p>
+    </page>
+    <page name="eating" title="Eating">
+	<h1>Mr. Gumby's Eating Page</h1>
+	<p>NOM NOM NOM</p>
+    </page>
+  </directory>
+</website>
+  
